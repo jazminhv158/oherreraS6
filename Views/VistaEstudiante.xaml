@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="oherreraS6.Views.VistaEstudiante"
+             Title="VistaEstudiante">
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="20">
+        
+        <Label 
+            Text="Estudiante"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <ListView
+            x:Name="lvEstudiantes" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                        <Label Text="{Binding codigo}"/>
+                        <Label Text="{Binding nombres}" />
+                        <Label Text="{Binding apellidos}" />
+                        <Label Text="{Binding edad}" />
+                        <Label Text="-----------------------"/>
+
+
+
+
+                    </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>
