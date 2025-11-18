@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="oherreraS6.Views.vistaActElim"
+             Title="vistaActElim">
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="20">
+        
+        <Label 
+            Text="Actualizar - Eliminar Estudiantes"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="18"/>
+
+        <Entry
+            x:Name="txtCodigo"
+            IsReadOnly="True"
+            ></Entry>
+
+        <Entry
+            x:Name="txtNombre"
+            Placeholder="ingresa nombre"></Entry>
+        <Entry
+            x:Name="txtApellido"
+            Placeholder="Ingresa apellido"></Entry>
+
+        <Entry
+            x:Name="txtEdad"
+            Placeholder="Ingresa Edad"></Entry>
+
+        <Button
+            x:Name="btnActualizar"
+            Text="Actualizar"
+            Clicked="btnActualizar_Clicked" ></Button>
+
+        <Button
+            x:Name="btnEliminar"
+            Text="Eliminar"
+            Clicked="btnEliminar_Clicked"></Button>
+    </VerticalStackLayout>
+</ContentPage>

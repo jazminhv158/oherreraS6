@@ -9,7 +9,8 @@
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new Views.VistaEstudiante());
+            // se habilita la navegacion de la otra/s vistas
+            return new Window(new NavigationPage(new Views.VistaEstudiante()));
         }
     }
 }

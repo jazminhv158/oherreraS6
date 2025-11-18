@@ -3,35 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="oherreraS6.Views.VistaEstudiante"
              Title="VistaEstudiante">
-    <VerticalStackLayout
-        Padding="20"
-        Spacing="20">
-        
-        <Label 
-            Text="Estudiante"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout Padding="20" Spacing="20">
 
-        <ListView
-            x:Name="lvEstudiantes" >
-            <ListView.ItemTemplate>
+        <Label Text="Estudiantes"
+               HorizontalOptions="Center"
+               FontSize="22"/>
+
+        <!-- ENCABEZADO -->
+        <Grid ColumnDefinitions="*,*,*,*" BackgroundColor="LightGray" Padding="5">
+            <Label Text="Código"/>
+            <Label Text="Nombres" Grid.Column="1"/>
+            <Label Text="Apellidos" Grid.Column="2"/>
+            <Label Text="Edad" Grid.Column="3"/>
+        </Grid>
+
+        <!-- TABLA -->
+        <CollectionView x:Name="lvEstudiantes"
+                        SelectionMode="Single"
+                        SelectionChanged="lvEstudiantes_SelectionChanged">
+
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout>
-                        <Label Text="{Binding codigo}"/>
-                        <Label Text="{Binding nombres}" />
-                        <Label Text="{Binding apellidos}" />
-                        <Label Text="{Binding edad}" />
-                        <Label Text="-----------------------"/>
+                    <Grid ColumnDefinitions="*,*,*,*"
+                          Padding="5">
 
+                        <Border Stroke="Black" StrokeThickness="1" Padding="5">
+                            <Label Text="{Binding codigo}" />
+                        </Border>
 
+                        <Border Stroke="Black" StrokeThickness="1" Padding="5" Grid.Column="1">
+                            <Label Text="{Binding nombres}" />
+                        </Border>
 
+                        <Border Stroke="Black" StrokeThickness="1" Padding="5" Grid.Column="2">
+                            <Label Text="{Binding apellidos}" />
+                        </Border>
 
-                    </StackLayout>
-                    </ViewCell>
+                        <Border Stroke="Black" StrokeThickness="1" Padding="5" Grid.Column="3">
+                            <Label Text="{Binding edad}" />
+                        </Border>
+                    </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-            
-        </ListView>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+       
+
+        <Button
+            x:Name="btnAgregar"
+            Text="Agregar Estudiante"
+            Clicked="btnAgregar_Clicked">
+
+        </Button>
     </VerticalStackLayout>
 </ContentPage>
