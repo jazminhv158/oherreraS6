@@ -71,7 +71,7 @@ public partial class vistaActElim : ContentPage
 
             if (response.IsSuccessStatusCode)
             {
-                await DisplayAlert("É", "Estudiante eliminado correctamente", "OK");
+                await DisplayAlert("Éxito", "Estudiante eliminado correctamente", "OK");
                 await Navigation.PopAsync(); // vuelve a la lista
             }
             else
